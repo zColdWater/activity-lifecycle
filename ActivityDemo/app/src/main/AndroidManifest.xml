@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.activity_demo">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <!--4种启动模式: 1.standard(默认) 2.singleInstance 3.singleTask 4.singleTop-->
+        <!--standard: 每次开启都是一个新的Activity-->
+        <!--singleTop: 当Activity已经是栈顶的时候，再开启相同的Activity，则不会生效，认为已经不需要再开启新的相同的Activity了-->
+        <!--singleTask: 每次启动该Activity时系统首先会在返回栈种检查时候存在该Activity，如果存在，并把在这个Activity之前的所有Activity出栈-->
+        <!--singleInstance: 共享栈，其实就是重新开辟一个全局的栈，其他应用也可以访问这个单独的栈，所有singleInstance的Activity都在这个特殊的栈里-->
+        <activity
+            android:name=".DetailActivity"
+            android:launchMode="standard"
+            >
+
+        </activity>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
